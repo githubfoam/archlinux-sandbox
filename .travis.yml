@@ -1,9 +1,6 @@
 ---
 sudo: required
 dist: bionic
-env:
-  global:
-  # auto vagrant installation
 notifications:
   slack:
     on_failure: always
