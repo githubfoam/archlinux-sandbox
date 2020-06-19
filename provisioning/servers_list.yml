@@ -1,0 +1,13 @@
+---
+- vagrant_box_host: "vg-arch-01"
+  vagrant_box: "archlinux/archlinux"
+  vbox_name: "vbox-arch-01"
+  vbox_ram: 512
+  vbox_cpu: 2
+  network_type: "private_network"
+  vagrant_box_ip: 192.168.18.81
+  guest_port: 80
+  host_port: 8882
+  # server_bootstrap: "provisioning/deploy.yml"
+  # ansible_version: "2.9.2"
+  # ansible_compatibility_mode: "2.0"
