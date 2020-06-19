@@ -20,28 +20,12 @@ vagrant version
 echo "=============================Install Vagrant============================================================="
 vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
 vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
-vagrant box add "bento/ubuntu-19.10" --provider=virtualbox
-vagrant mutate "bento/ubuntu-19.10" libvirt
-vagrant box add "bento/ubuntu-20.04" --provider=virtualbox
-vagrant mutate "bento/ubuntu-20.04" libvirt
-#https://app.vagrantup.com/centos/boxes/8 by default libvirt support
-vagrant box add "centos/8" --provider=libvirt
 vagrant box add "archlinux/archlinux" --provider=libvirt
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
 vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
-vagrant up --provider=libvirt k8s-master
-vagrant ssh k8s-master -c "sudo cp /vagrant/Makefile ."
-vagrant ssh k8s-master -c "sudo cp -r /vagrant/scripts/ ."
-# vagrant ssh k8s-master -c "sudo make usernetes-containerd"
-vagrant up --provider=libvirt node-1
-vagrant ssh node-1 -c "sudo cp /vagrant/Makefile ."
-vagrant ssh node-1 -c "sudo cp -r /vagrant/scripts/ ."
-vagrant up --provider=libvirt node-2
-# vagrant ssh node-2 -c "sudo cp /vagrant/Makefile ."
-# vagrant ssh node-2 -c "sudo cp -r /vagrant/scripts/ ."
-# vagrant ssh node-2 -c "sudo make archlinux-preps"
-# vagrant up --provider=libvirt
+vagrant up --provider=libvirt vg-arch-01
+# vagrant ssh vg-arch-01 -c "hostnamectl"
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
