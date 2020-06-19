@@ -8,6 +8,6 @@
   vagrant_box_ip: 192.168.18.81
   guest_port: 80
   host_port: 882
-  server_bootstrap: "provisioning/deploy.yml"
-  ansible_version: "2.9.2"
-  ansible_compatibility_mode: "2.0"
+  # server_bootstrap: "provisioning/deploy.yml"
+  # ansible_version: "2.9.2"
+  # ansible_compatibility_mode: "2.0"

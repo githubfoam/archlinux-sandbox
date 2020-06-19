@@ -52,26 +52,18 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          end
 
      end # end of box.vm.providers
-          box.vm.provision "shell", inline: <<-SHELL
-          # hostnamectl set-hostname arch-01
-          # echo "192.168.18.81 vg-arch-01.local vg-arch-01" |sudo tee -a /etc/hosts
-          # cat /etc/hosts
-          # echo "name: nameserver, ip: 8.8.8.8 " |sudo tee -a /etc/resolv.conf
-          # cat /etc/resolv.conf
-          pacman -Syu --noconfirm
-          pacman -S --noconfirm glibc ansible
-          SHELL
-          box.vm.provision "ansible_local" do |ansible|
-              # ansible.compatibility_mode = "2.0"
-              ansible.compatibility_mode = server["ansible_compatibility_mode"]
-              ansible.version = server["ansible_version"]
-              ansible.playbook = server["server_bootstrap"]
-              # ansible.inventory_path = 'provisioning/hosts'
-              # ansible.verbose = "vvvv" # debug
-              # ansible.galaxy_role_file = "/vagrant/requirements.yml"
-              # ansible.galaxy_roles_path = "/etc/ansible/roles"
-              # ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path} --force"
-           end # end if box.vm.provision
+          # box.vm.provision "ansible_local" do |ansible|
+          #     ansible.compatibility_mode = "2.0"
+          #     ansible.compatibility_mode = server["ansible_compatibility_mode"]
+          #     ansible.version = server["ansible_version"]
+          #     ansible.playbook = server["server_bootstrap"]
+          #     ansible.inventory_path = 'provisioning/hosts'
+          #     ansible.verbose = "vvvv" # debug
+          #     ansible.galaxy_role_file = "/vagrant/requirements.yml"
+          #     ansible.galaxy_roles_path = "/etc/ansible/roles"
+          #     ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path} --force"
+          #  end # end if box.vm.provision
+          box.vm.provision :shell, path: "scripts/archlinux-req.sh"
           box.vm.provision "shell", inline: <<-SHELL
           echo "===================================================================================="
                                     hostnamectl status
