@@ -2,12 +2,26 @@
 - vagrant_box_host: "vg-arch-01"
   vagrant_box: "archlinux/archlinux"
   vbox_name: "vbox-arch-01"
-  vbox_ram: 512
+  vbox_ram: 2048
   vbox_cpu: 2
   network_type: "private_network"
   vagrant_box_ip: 192.168.18.81
   guest_port: 80
   host_port: 8882
+  server_script: "provisioning/archlinux.sh"
+  # server_bootstrap: "provisioning/deploy.yml"
+  # ansible_version: "2.9.2"
+  # ansible_compatibility_mode: "2.0"
+- vagrant_box_host: "vg-opensuse-01"
+  vagrant_box: "opensuse/Tumbleweed.x86_64"
+  vbox_name: "vbox-opensuse-01"
+  vbox_ram: 2048
+  vbox_cpu: 2
+  network_type: "private_network"
+  vagrant_box_ip: 192.168.18.82
+  guest_port: 80
+  host_port: 8882
+  server_script: "provisioning/opensuseTumbleweedx8664.sh"
   # server_bootstrap: "provisioning/deploy.yml"
   # ansible_version: "2.9.2"
   # ansible_compatibility_mode: "2.0"

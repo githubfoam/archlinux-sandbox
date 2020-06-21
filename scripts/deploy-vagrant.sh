@@ -21,11 +21,13 @@ echo "=============================Install Vagrant==============================
 vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
 vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
 vagrant box add "archlinux/archlinux" --provider=libvirt
+vagrant up --provider=libvirt vg-arch-01
+# vagrant ssh vg-arch-01 -c "hostnamectl"
+# https://app.vagrantup.com/opensuse/boxes/Tumbleweed.x86_64
+vagrant box add  "opensuse/Tumbleweed.x86_64" --provider=libvirt
+vagrant up --provider=libvirt "vg-opensuse-01"
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
 vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
-vagrant up --provider=libvirt vg-arch-01
-# vagrant ssh vg-arch-01 -c "hostnamectl"
-vagrant status
 virsh list --all #show all running KVM/libvirt VMs

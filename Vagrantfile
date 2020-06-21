@@ -64,17 +64,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           #     ansible.galaxy_roles_path = "/etc/ansible/roles"
           #     ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path} --force"
           #  end # end if box.vm.provision
-          box.vm.provision :shell, path: "scripts/archlinux-req.sh"
-          box.vm.provision "shell", inline: <<-SHELL
-          echo "===================================================================================="
-                                    hostnamectl status
-          echo "===================================================================================="
-          echo "         \   ^__^                                                                  "
-          echo "          \  (oo)\_______                                                          "
-          echo "             (__)\       )\/\                                                      "
-          echo "                 ||----w |                                                         "
-          echo "                 ||     ||                                                         "
-          SHELL
+          box.vm.provision "shell", path: server["server_script"]
         end # end of config.vm
       end  # end of servers_list.each loop
 end # end of Vagrant.configure
