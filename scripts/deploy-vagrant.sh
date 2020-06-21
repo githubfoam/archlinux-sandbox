@@ -27,27 +27,30 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # # https://app.vagrantup.com/opensuse/boxes/Tumbleweed.x86_64
 # vagrant box add  "opensuse/Tumbleweed.x86_64" --provider=libvirt
 # vagrant up --provider=libvirt "vg-opensuse-01"
+# # https://app.vagrantup.com/opensuse/boxes/Kubic.x86_64
+# vagrant box add  "opensuse/Kubic.x86_64" --provider=libvirt
+# vagrant up --provider=libvirt "vg-opensusekubicx8664"
+
 
 # # https://app.vagrantup.com/suse/boxes/sles12sp2
 # vagrant box add  "suse/sles12sp2" --provider=libvirt
 # vagrant up --provider=libvirt "vg-sles-01"
+# # https://app.vagrantup.com/opensuse/boxes/Kubic.aarch64
+# vagrant box add  "opensuse/Kubic.aarch64" --provider=libvirt
+# vagrant up --provider=libvirt "vg-opensusekubicaarch64"
 
-# https://app.vagrantup.com/opensuse/boxes/Kubic.x86_64
-vagrant box add  "opensuse/Kubic.x86_64" --provider=libvirt
-vagrant up --provider=libvirt "vg-opensusekubicx8664"
-# https://app.vagrantup.com/opensuse/boxes/Kubic.aarch64
-vagrant box add  "opensuse/Kubic.aarch64" --provider=libvirt
-vagrant up --provider=libvirt "vg-opensusekubicaarch64"
 
-# # https://app.vagrantup.com/opensuse/boxes/MicroOS.x86_64
-# vagrant box add  "opensuse/MicroOS.x86_64" --provider=libvirt
-# vagrant up --provider=libvirt "vg-microosx8664"
-# # https://app.vagrantup.com/opensuse/boxes/MicroOS.aarch64
-# vagrant box add  "opensuse/MicroOS.aarch64" --provider=libvirt
-# vagrant up --provider=libvirt "vg-microosaarch64"
-# # https://app.vagrantup.com/opensuse/boxes/Tumbleweed.aarch64
-# vagrant box add  "opensuse/Tumbleweed.aarch64" --provider=libvirt
-# vagrant up --provider=libvirt "vg-tumbleweedaarch64"
+
+
+# https://app.vagrantup.com/opensuse/boxes/MicroOS.x86_64
+vagrant box add  "opensuse/MicroOS.x86_64" --provider=libvirt
+vagrant up --provider=libvirt "vg-microosx8664"
+# https://app.vagrantup.com/opensuse/boxes/MicroOS.aarch64
+vagrant box add  "opensuse/MicroOS.aarch64" --provider=libvirt
+vagrant up --provider=libvirt "vg-microosaarch64"
+# https://app.vagrantup.com/opensuse/boxes/Tumbleweed.aarch64
+vagrant box add  "opensuse/Tumbleweed.aarch64" --provider=libvirt
+vagrant up --provider=libvirt "vg-tumbleweedaarch64"
 
 vagrant status
 virsh list --all #show all running KVM/libvirt VMs
