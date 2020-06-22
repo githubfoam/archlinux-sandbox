@@ -23,8 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      box.vm.hostname = server["vagrant_box_host"]
      box.vm.network server["network_type"], ip: server["vagrant_box_ip"]
      box.vm.network "forwarded_port", guest: server["guest_port"], host: server["host_port"],  id: 'elastic_port'
-     # box.vm.synced_folder ".", "/vagrant", disabled: true  # archlinux only
-     box.vm.synced_folder ".", "/vagrant", disabled: true  # archlinux only
+     # box.vm.synced_folder ".", "/vagrant", disabled: true  # archlinux only, script still works
+     box.vm.synced_folder ".", "/vagrant", disabled: false  # archlinux only
 
                box.vm.provider "virtualbox" do |vb|
                    vb.name = server["vbox_name"]
