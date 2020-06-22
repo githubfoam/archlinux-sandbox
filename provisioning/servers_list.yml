@@ -9,9 +9,10 @@
   guest_port: 80
   host_port: 8882
   server_script: "provisioning/archlinux.sh"
-  # server_bootstrap: "provisioning/deploy.yml"
-  # ansible_version: "2.9.2"
-  # ansible_compatibility_mode: "2.0"
+  server_bootstrap: "provisioning/deploy.yml"
+  ansible_version: "2.9.2"
+  ansible_compatibility_mode: "2.0"
+  
 - vagrant_box_host: "vg-opensuse-01"
   vagrant_box: "opensuse/Tumbleweed.x86_64"
   vbox_name: "vbox-opensuse-01"
