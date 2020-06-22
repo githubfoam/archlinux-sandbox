@@ -23,7 +23,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
      box.vm.hostname = server["vagrant_box_host"]
      box.vm.network server["network_type"], ip: server["vagrant_box_ip"]
      box.vm.network "forwarded_port", guest: server["guest_port"], host: server["host_port"],  id: 'elastic_port'
-     # box.vm.synced_folder ".", "/vagrant", disabled: true  # archlinux only, script still works
      box.vm.synced_folder ".", "/vagrant", disabled: false  # archlinux only
 
                box.vm.provider "virtualbox" do |vb|
@@ -54,11 +53,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                end # end of box.vm.providers
 
                 box.vm.provision "ansible_local" do |ansible|
-                    ansible.compatibility_mode = "2.0"
-                    # ansible.compatibility_mode = server["ansible_compatibility_mode"]
+                    # ansible.compatibility_mode = "2.0"
+                    ansible.compatibility_mode = server["ansible_compatibility_mode"]
                     ansible.version = server["ansible_version"]
-                    # ansible.playbook = server["server_bootstrap"]
-                    ansible.playbook = "provisioning/deploy.yml"
+                    ansible.playbook = server["server_bootstrap"]
+                    # ansible.playbook = "provisioning/deploy.yml"
                     # ansible.inventory_path = 'provisioning/hosts'
                     # ansible.verbose = "vvvv" # debug
                     # ansible.galaxy_role_file = "/vagrant/requirements.yml"
