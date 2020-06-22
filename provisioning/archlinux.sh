@@ -10,14 +10,11 @@ echo "             (__)\       )\/\                                             
 echo "                 ||----w |                                                         "
 echo "                 ||     ||                                                         "
 echo "=========================================================================================="
-cat /etc/hosts*
-ls -lai /
-ls -lai /vagrant
 # hostnamectl set-hostname vg-arch-01
 # echo "192.168.18.81 vg-arch-01.local vg-arch-01" |sudo tee -a /etc/hosts
-# cat /etc/hosts
+cat /etc/hosts
 # echo "name: nameserver, ip: 8.8.8.8 " |sudo tee -a /etc/resolv.conf
-# cat /etc/resolv.conf
+cat /etc/resolv.conf
 echo "=========================================================================================="
 # pacman -Syu --noconfirm #Update and upgrade  all packages on the system
 # pacman -Si ansible #Show extensive info about a package
