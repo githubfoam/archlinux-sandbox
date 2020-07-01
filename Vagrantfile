@@ -52,12 +52,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                    end
                end # end of box.vm.providers
 
+                box.vm.provision "shell", path: server["server_script"]
+                
                 box.vm.provision "ansible_local" do |ansible|
                     # ansible.compatibility_mode = "2.0"
                     ansible.compatibility_mode = server["ansible_compatibility_mode"]
                     ansible.version = server["ansible_version"]
                     ansible.playbook = server["server_bootstrap"]
-                    # ansible.playbook = "provisioning/deploy.yml"
                     # ansible.inventory_path = 'provisioning/hosts'
                     # ansible.verbose = "vvvv" # debug
                     # ansible.galaxy_role_file = "/vagrant/requirements.yml"
@@ -65,7 +66,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                     # ansible.galaxy_command = "sudo ansible-galaxy install --role-file=%{role_file} --roles-path=%{roles_path} --force"
                  end # end if box.vm.provision
 
-                box.vm.provision "shell", path: server["server_script"]
+
    end # end of config.vm
  end  # end of servers_list.each loop
 

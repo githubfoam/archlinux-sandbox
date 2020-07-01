@@ -12,3 +12,17 @@
   server_bootstrap: "provisioning/deploy.yml"
   ansible_version: "2.9.10"
   ansible_compatibility_mode: "2.0"
+
+- vagrant_box_host: "vg-arch-02"
+  vagrant_box: "archlinux/archlinux"
+  vbox_name: "vbox-arch-02"
+  vbox_ram: 2048
+  vbox_cpu: 2
+  network_type: "private_network"
+  vagrant_box_ip: 192.168.18.82
+  guest_port: 80
+  host_port: 8882
+  server_script: "provisioning/deploy-bcc.sh"
+  server_bootstrap: "provisioning/deploy.yml"
+  ansible_version: "2.9.10"
+  ansible_compatibility_mode: "2.0"
