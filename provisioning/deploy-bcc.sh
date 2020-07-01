@@ -9,7 +9,8 @@ set -o xtrace
 echo "=============================Arch - AUR - Source bcc============================================================"
 
 pacman -Syu --noconfirm #Update and upgrade  all packages on the system
-pacman -S --noconfirm git
+pacman -S --noconfirm git cmake
+
 
 #https://nanxiao.me/en/install-bcc-on-archlinux/
 #https://github.com/iovisor/bcc/blob/master/INSTALL.md#arch---aur
