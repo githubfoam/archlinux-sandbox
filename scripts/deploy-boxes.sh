@@ -15,7 +15,7 @@ vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with differ
 # vagrant ssh vg-arch-01 -c "hostnamectl"
 
 vagrant box add "archlinux/archlinux" --provider=libvirt
-vagrant up --provider=libvirt vg-arch-02
+vagrant up --provider=libvirt vg-arch-01
 
 vagrant box list #veridy installed boxes
 vagrant status #Check the status of the VMs to see that none of them have been created yet
