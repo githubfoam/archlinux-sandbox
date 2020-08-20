@@ -6,22 +6,6 @@
   vars:
     add_host_entries: true
     add_resolv_entries: true
-  # vars_files:
-  #   - "vars/{{env}}.yml"
-  # pre_tasks:
-  # - name: "Setting hostname"
-  #   shell: "hostnamectl set-hostname {{ inventory_hostname }}"
   roles:
     - common
-# - name: "Install docker-ce and docker-compose-ce"
-#   gather_facts: true
-#   hosts:  vg-docker-01
-#   become: yes
-#   roles:
-#     - docker-compose
-# - name: "Install docker-ce and docker-compose-ce"
-#   gather_facts: true
-#   hosts:  vg-docker-03
-#   become: yes
-#   roles:
-#     - docker-compose
+
