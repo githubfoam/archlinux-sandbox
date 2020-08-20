@@ -10,5 +10,5 @@
   host_port: 8882
   server_script: "provisioning/bootstrap.sh"
   server_bootstrap: "provisioning/deploy.yml"
-  # ansible_version: "2.9.10" for the sake of automation
+  ansible_version: "2.9.12" #for the sake of automation
   ansible_compatibility_mode: "2.0"
