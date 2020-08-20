@@ -10,7 +10,7 @@
   host_port: 8882
   server_script: "provisioning/bootstrap.sh"
   server_bootstrap: "provisioning/deploy.yml"
-  ansible_version: "2.9.10"
+  # ansible_version: "2.9.10"
   ansible_compatibility_mode: "2.0"
 
 - vagrant_box_host: "vg-arch-02"
@@ -24,5 +24,5 @@
   host_port: 8882
   server_script: "provisioning/deploy-bcc.sh"
   server_bootstrap: "provisioning/deploy.yml"
-  ansible_version: "2.9.10"
+  # ansible_version: "2.9.10"
   ansible_compatibility_mode: "2.0"
